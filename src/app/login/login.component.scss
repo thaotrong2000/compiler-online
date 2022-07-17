@@ -1,0 +1,154 @@
+.screen-first {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+
+  .login {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+
+    .slogan {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+
+      .slogan-title {
+        color: #3d75ef;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      .slogan-content {
+        font-size: 24px;
+      }
+    }
+
+    .form-login {
+      display: flex;
+      width: 50%;
+      justify-content: center;
+
+      form {
+        background-color: #fff;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+        box-sizing: border-box;
+        padding: 20px 20px 28px 20px;
+
+        nz-input-group {
+          height: 52px;
+          border: 1px solid #dddfe2;
+          border-radius: 6px;
+          font-size: 17px;
+          padding: 14px 16px;
+          width: 330px;
+
+          input {
+            font-size: 17px;
+          }
+        }
+
+        .btn-login {
+          background-color: #1877f2;
+          border: none;
+          border-radius: 6px;
+          font-size: 20px;
+          height: 48px;
+          line-height: 48px;
+          padding: 0 16px;
+        }
+
+        .forgot-password {
+          border: none;
+          margin-top: 16px;
+
+          &::after {
+            box-shadow: none !important;
+          }
+        }
+
+        .line-break {
+          align-items: center;
+          border-bottom: 1px solid #dadde1;
+          display: flex;
+          margin: 20px 16px;
+          text-align: center;
+        }
+
+        .create-user {
+          display: flex;
+          justify-content: center;
+
+          .register-user {
+            height: 48px;
+            width: fit-content;
+            background-color: #42b72a;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            line-height: 48px;
+            padding: 0 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+// Create new user:
+.register-modal {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.register-modal-slogan {
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+::ng-deep .create-new-user {
+  nz-input-group {
+    input {
+      height: 40px;
+      font-size: 17px;
+      border: 1px solid #dddfe2;
+      border-radius: 6px !important;
+      padding: 14px 16px;
+    }
+  }
+
+  .btn-create-container {
+    display: flex;
+    justify-content: center;
+
+    .btn-login {
+      width: fit-content;
+      background-color: #2aa311;
+      border: none;
+      border-radius: 6px;
+      font-size: 20px;
+      height: 36px;
+      line-height: 36px;
+      padding: 0 32px;
+    }
+  }
+
+  .ant-modal-footer {
+    display: none;
+  }
+}

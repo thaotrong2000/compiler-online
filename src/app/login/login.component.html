@@ -1,0 +1,129 @@
+<div class="screen-first">
+  <div class="login">
+    <div class="slogan">
+      <div class="slogan-title">Compiler Online</div>
+      <div class="slogan-content">
+        Compiler Online giúp bạn kết nối và chia sẻ những giải pháp trong code.
+      </div>
+    </div>
+
+    <div class="form-login">
+      <form nz-form [formGroup]="validateForm" class="login-form">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Vui lòng nhập tên đăng nhập!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="text"
+                nz-input
+                formControlName="userName"
+                placeholder="Tên đăng nhập"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Vui lòng nhập mật khẩu!">
+            <nz-input-group nzPrefixIcon="lock">
+              <input
+                type="password"
+                nz-input
+                formControlName="password"
+                placeholder="Mật khẩu"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <button
+          nz-button
+          class="login-form-button login-form-margin btn-login"
+          [nzType]="'primary'"
+          (click)="submitForm()"
+        >
+          Đăng nhập
+        </button>
+        <button
+          nz-button
+          class="login-form-button login-form-margin forgot-password"
+        >
+          Quên mật khẩu
+        </button>
+        <div class="line-break"></div>
+        <div class="create-user">
+          <button
+            nz-button
+            class="login-form-button login-form-margin register-user"
+            [nzType]="'primary'"
+            (click)="openCreateUser()"
+          >
+            Tạo tài khoản mới
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nz-modal
+  [(nzVisible)]="isVisibleNewUser"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="handleOk()"
+  nzMaskClosable="false"
+  nzClassName="create-new-user"
+>
+  <ng-template [nzModalTitle]>
+    <div class="register-modal">Đăng ký</div>
+    <div class="register-modal-slogan">Miễn phí và luôn như vậy</div>
+  </ng-template>
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="validateFormRegister" class="login-form">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập tên đăng nhập!">
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="userName"
+              placeholder="Tên đăng nhập"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập mật khẩu!">
+          <nz-input-group>
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Mật khẩu"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Vui lòng nhập lại mật khẩu!">
+          <nz-input-group>
+            <input
+              type="password"
+              nz-input
+              formControlName="confirmPassword"
+              placeholder="Nhập lại mật khẩu"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="btn-create-container">
+        <button
+          nz-button
+          class="login-form-button login-form-margin btn-login"
+          [nzType]="'primary'"
+          (click)="submitFormRegister()"
+        >
+          Đăng ký
+        </button>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template [nzModalFooter]> </ng-template>
+</nz-modal>
