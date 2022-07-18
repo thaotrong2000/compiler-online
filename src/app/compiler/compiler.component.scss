@@ -1,0 +1,62 @@
+::ng-deep .editor-container-main {
+  padding: 20px 0px 20px 20px;
+
+  .editor-header {
+    padding-bottom: 20px;
+    nz-select {
+      width: 250px !important;
+    }
+  }
+
+  .editor-content {
+    display: flex;
+
+    .editor {
+      height: 80vh;
+      width: 65%;
+
+      .monaco-editor {
+        height: 80vh !important;
+      }
+
+      .overflow-guard {
+        height: 80vh !important;
+      }
+
+      .editor-container {
+        height: 80vh !important;
+      }
+    }
+
+    .edit-result {
+      flex: 1;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      padding: 0px 20px 0px 20px;
+
+      .output-title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      .output-content {
+        height: 400px;
+        background-color: rgb(32 41 59);
+        border-radius: 6px;
+      }
+    }
+  }
+}
+
+.btn-compiler {
+  height: 42px;
+  width: fit-content;
+  background-color: #1877f2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  align-self: center;
+  margin-top: 20px;
+  border-radius: 6px;
+}

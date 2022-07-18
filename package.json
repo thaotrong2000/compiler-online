@@ -21,7 +21,10 @@
     "@ant-design/icons": "^4.7.0",
     "@ant-design/icons-angular": "^13.1.0",
     "font-awesome": "^4.7.0",
+    "monaco-editor": "^0.33.0",
+    "monaco-themes": "^0.4.2",
     "ng-zorro-antd": "^13.3.2",
+    "ngx-monaco-editor": "^12.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
