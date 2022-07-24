@@ -17,10 +17,10 @@ export class CommonService {
 
   constructor(private http: HttpClient) {}
 
-  postSourceCode() {
+  postSourceCode(formData: any) {
     return this.http.post(
       'https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&fields=*',
-      this.options.data,
+      formData,
       {
         headers: this.options.headers,
       }
