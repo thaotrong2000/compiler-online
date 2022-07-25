@@ -1,5 +1,7 @@
+import { Language } from './../compiler/compiler.component';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -35,5 +37,11 @@ export class CommonService {
         headers: this.options.headers,
       }
     );
+  }
+
+  getAllLanguage(): Observable<Language[]> {
+    return this.http.get('https://ce.judge0.com/languages/all') as Observable<
+      Language[]
+    >;
   }
 }

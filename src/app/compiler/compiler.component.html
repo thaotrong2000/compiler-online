@@ -1,20 +1,26 @@
 <div class="editor-container-main">
   <div class="editor-header">
     <nz-select
-      [(ngModel)]="editorOptions.language"
+      [(ngModel)]="formData.language_id"
       class="select-language"
-      (ngModelChange)="onChangeLanguage(editorOptions.language)"
+      (ngModelChange)="onChangeLanguage(formData.language_id)"
     >
       <nz-option
         *ngFor="let lang of language"
-        [nzValue]="lang.value"
-        [nzLabel]="lang.label"
+        [nzValue]="lang.id"
+        [nzLabel]="lang.name"
       ></nz-option>
     </nz-select>
 
-    <nz-select>
-      <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-      <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+    <nz-select
+      [(ngModel)]="editorOptions.theme"
+      (ngModelChange)="onChangeTheme(editorOptions.theme)"
+    >
+      <nz-option
+        *ngFor="let theme of listTheme"
+        [nzValue]="theme.value"
+        [nzLabel]="theme.label"
+      ></nz-option>
     </nz-select>
   </div>
   <div class="editor-content">
@@ -26,16 +32,19 @@
     </div>
 
     <div class="edit-result">
-      <div class="output-title">Out put</div>
-      <div class="output-content"></div>
+      <div class="output-title">Input</div>
+      <textarea class="input-content" rows="4" [(ngModel)]="textInput">
+      </textarea>
+      <div class="output-title">Output</div>
+      <div class="output-content">{{ textOutput }}</div>
       <button nz-button class="btn-compiler" (click)="compareAndExecute()">
         Compile and Execute
       </button>
       <div class="compiler-infor">
         <div>
-          <div>Status:</div>
-          <div>Memory:</div>
-          <div>Time:</div>
+          <div>Status: {{ inforCompiler?.status }}</div>
+          <div>Memory: {{ inforCompiler?.memory }}</div>
+          <div>Time: {{ inforCompiler?.time }}</div>
         </div>
       </div>
     </div>

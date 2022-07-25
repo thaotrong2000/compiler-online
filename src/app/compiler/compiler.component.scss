@@ -43,7 +43,18 @@
       .output-content {
         height: 400px;
         background-color: rgb(32 41 59);
+        color: #fff;
         border-radius: 6px;
+        padding: 10px;
+        overflow-y: auto;
+      }
+
+      .input-content {
+        background-color: rgb(32 41 59);
+        color: #fff;
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -59,4 +70,8 @@
   align-self: center;
   margin-top: 20px;
   border-radius: 6px;
+}
+
+.select-language {
+  margin-right: 20px;
 }
